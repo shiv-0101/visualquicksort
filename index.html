@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Quick Sort Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <div class="sidebar">
+        <h2>Randomized Quick Sort</h2>
+        <p><strong>Algorithm Steps:</strong></p>
+        <ol>
+            <li>If low &lt; high</li>
+            <li>Pick a random pivot</li>
+            <li>Place pivot at correct sorted position</li>
+            <li>Recursively sort left subarray</li>
+            <li>Recursively sort right subarray</li>
+        </ol>
+        <p><strong>Time Complexity:</strong></p>
+        <p>Best: O(n log n)</p>
+        <p>Average: O(n log n)</p>
+        <p>Worst: O(n²)</p>
+    </div>
+
+    <div class="main">
+
+        <h1>Randomized Quick Sort</h1>
+
+        <div class="controls">
+            <input type="text" id="userInput"
+                placeholder="Enter 10 numbers separated by commas">
+            <button id="generateBtn">Generate / Load</button>
+            <button id="startBtn">Start</button>
+
+            <div class="slider-container">
+                Speed:
+                <input type="range" min="200" max="1500" value="700" id="speedSlider">
+            </div>
+        </div>
+
+        <div id="array-container"></div>
+
+        <div class="bottom-controls">
+            <button id="prevBtn">⬅ Prev</button>
+            <button id="nextBtn">Next ➡</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
