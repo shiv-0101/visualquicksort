@@ -11,18 +11,30 @@
 
     <div class="sidebar">
         <h2>Randomized Quick Sort</h2>
-        <p><strong>Algorithm Steps:</strong></p>
-        <ol>
-            <li>If low &lt; high</li>
-            <li>Pick a random pivot</li>
-            <li>Place pivot at correct sorted position</li>
-            <li>Recursively sort left subarray</li>
-            <li>Recursively sort right subarray</li>
-        </ol>
+                
+        <p><strong>Algorithm:</strong></p>
+        <div class="algorithm">
+            <p><strong>RandomizedQuickSort(A, low, high)</strong></p>
+            <p>If low &lt; high:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Set r = Random(low, high)</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Swap A[r] with A[high]</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Set pivot = A[high]</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Set i = low - 1</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;For j = low to high - 1:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If A[j] &le; pivot:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set i = i + 1</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Swap A[i] with A[j]</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Swap A[i + 1] with A[high]</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Set p = i + 1</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Call RandomizedQuickSort(A, low, p - 1)</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Call RandomizedQuickSort(A, p + 1, high)</p>
+            <p>Exit</p>
+        </div>
         <p><strong>Time Complexity:</strong></p>
         <p>Best: O(n log n)</p>
         <p>Average: O(n log n)</p>
         <p>Worst: O(n²)</p>
+
     </div>
 
     <div class="main">
@@ -31,7 +43,7 @@
 
         <div class="controls">
             <input type="text" id="userInput"
-                placeholder="Enter 10 numbers separated by commas">
+                placeholder="Enter numbers separated by commas">
             <button id="generateBtn">Generate / Load</button>
             <button id="startBtn">Start</button>
 
